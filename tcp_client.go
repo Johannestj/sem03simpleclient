@@ -30,9 +30,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	} 
-
+	log.Println("for dekryptering", string(buf[:n]))
 	dekryptertMelding := mycrypt.Krypter([]rune(string(buf[:n])), mycrypt.ALF_SEM03, len(mycrypt.ALF_SEM03)-4)
 	log.Println("Dekrypter melding: ", string(dekryptertMelding))
+	log.Println("etter dekryptering", string(buf[:n]))
+	log.Println("dektryptert melding", dekryptertMelding)
+
 	
 	response := string(dekryptertMelding)
 	log.Printf("reply from proxy: %s", response)
